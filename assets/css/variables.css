@@ -1,0 +1,70 @@
+/* =========================================================
+   PBFA design tokens
+   Palette derived from the PBFA logo (ribbon green, seal saffron,
+   ivory border) plus warm agricultural neutrals.
+   ========================================================= */
+:root {
+  /* Brand greens (from the "Unity is Strength" ribbon) */
+  --forest-950: #0a2418;
+  --forest-900: #0f3322;
+  --forest-800: #164430;
+  --forest-700: #1d5a3c;
+  --forest-500: #2f7a4f;
+  --olive-500: #6f7d3c;
+  --olive-100: #eef0dd;
+
+  /* Saffron (from the seal lettering) – used sparingly for actions */
+  --saffron-600: #b8480f;
+  --saffron-500: #d65a17;
+  --saffron-100: #fbe9dc;
+
+  /* Warm neutrals */
+  --ivory: #fffdf7;
+  --cream: #faf5ea;
+  --sand-200: #efe5cf;
+  --sand-300: #e3d5b6;
+  --brown-700: #5b3f27;
+  --brown-500: #8a6643;
+  --gold-500: #c49a4c;
+  --gold-300: #e2c88e;
+
+  /* Ink */
+  --ink-900: #1b211d;
+  --ink-700: #3b443e;
+  --ink-500: #5f6862;
+  --line: rgba(27, 33, 29, .12);
+  --line-light: rgba(255, 253, 247, .16);
+
+  /* Typography */
+  --font-sans: "Manrope", "Noto Sans Devanagari", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-serif: "Playfair Display", "Noto Serif Devanagari", Georgia, serif;
+  --font-deva: "Noto Sans Devanagari", "Manrope", sans-serif;
+
+  --fs-hero: clamp(2.35rem, 1.4rem + 4.2vw, 4.6rem);
+  --fs-h1: clamp(2.1rem, 1.5rem + 2.6vw, 3.5rem);
+  --fs-h2: clamp(1.75rem, 1.3rem + 1.9vw, 2.75rem);
+  --fs-h3: clamp(1.15rem, 1.05rem + .45vw, 1.4rem);
+  --fs-lead: clamp(1.05rem, 1rem + .3vw, 1.22rem);
+  --fs-body: 1rem;
+  --fs-small: .875rem;
+  --fs-label: .78rem;
+
+  /* Spacing scale */
+  --s-1: .25rem; --s-2: .5rem; --s-3: .75rem; --s-4: 1rem; --s-5: 1.5rem;
+  --s-6: 2rem; --s-7: 3rem; --s-8: 4rem; --s-9: 6rem;
+  --section-y: clamp(3.5rem, 2.2rem + 5vw, 7rem);
+  --gutter: clamp(1.1rem, .6rem + 2vw, 2rem);
+  --container: 1200px;
+
+  /* Shape & depth */
+  --r-sm: 10px; --r-md: 16px; --r-lg: 24px; --r-xl: 32px; --r-pill: 999px;
+  --shadow-sm: 0 1px 2px rgba(15, 51, 34, .06), 0 2px 8px rgba(15, 51, 34, .05);
+  --shadow-md: 0 4px 12px rgba(15, 51, 34, .07), 0 14px 34px rgba(15, 51, 34, .08);
+  --shadow-lg: 0 20px 60px rgba(10, 36, 24, .22);
+
+  --ease: cubic-bezier(.2, .7, .2, 1);
+  --header-h: 76px;
+
+  /* Decorative contour lines (fields / furrows) used on dark sections */
+  --contour: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 900 600' fill='none' stroke='%23e2c88e' stroke-opacity='.13' stroke-width='1.2'%3E%3Cpath d='M-20 80C140 30 260 140 430 90s300-70 490 10'/%3E%3Cpath d='M-20 130c160-50 280 60 450 10s300-70 490 10'/%3E%3Cpath d='M-20 180c160-50 280 60 450 10s300-70 490 10'/%3E%3Cpath d='M-20 230c160-50 280 60 450 10s300-70 490 10'/%3E%3Cpath d='M-20 380c180 60 300-40 470 10s290 80 470 0'/%3E%3Cpath d='M-20 430c180 60 300-40 470 10s290 80 470 0'/%3E%3Cpath d='M-20 480c180 60 300-40 470 10s290 80 470 0'/%3E%3Cpath d='M-20 530c180 60 300-40 470 10s290 80 470 0'/%3E%3C/svg%3E");
+}
