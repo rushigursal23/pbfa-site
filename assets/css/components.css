@@ -69,7 +69,7 @@
 /* ---------- Fact tiles ---------- */
 .facts { display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--s-4); }
 .fact { padding: var(--s-5); border-radius: var(--r-md); background: var(--cream); border: 1px solid var(--line); }
-.fact__value { display: block; font-family: var(--font-serif); font-size: clamp(1.7rem, 1.3rem + 1.4vw, 2.4rem); font-weight: 700; color: var(--forest-900); line-height: 1.1; }
+.fact__value { display: block; font-family: var(--font-sans); font-size: clamp(1.7rem, 1.3rem + 1.4vw, 2.3rem); font-weight: 800; letter-spacing: -.02em; color: var(--forest-900); line-height: 1.1; }
 .fact__value small { font-size: .5em; font-family: var(--font-sans); font-weight: 700; color: var(--ink-500); margin-left: .2rem; }
 .fact__label { display: block; margin-top: .45rem; font-size: var(--fs-small); color: var(--ink-500); line-height: 1.45; }
 
@@ -245,9 +245,49 @@
 @media (min-width: 900px) { .cta-band { grid-template-columns: 1fr auto; } }
 .cta-band h2 { color: var(--ivory); margin-bottom: .3em; }
 .cta-band p { margin: 0; max-width: 60ch; }
-.price-tag { display: inline-flex; align-items: baseline; gap: .5rem; margin-bottom: var(--s-4); }
-.price-tag b { font-family: var(--font-serif); font-size: clamp(2.2rem, 1.6rem + 2vw, 3.2rem); color: var(--gold-300); line-height: 1; }
-.price-tag span { font-size: var(--fs-small); text-transform: uppercase; letter-spacing: .1em; font-weight: 700; }
+/* ---------- Price (₹) ----------
+   The ₹ glyph is not in Manrope/Playfair, so it is drawn from a 1-glyph
+   Noto Sans subset (loaded in every page <head>) for identical rendering on
+   every phone. Digits: Manrope ExtraBold, lining + tabular figures. */
+.price {
+  display: inline-flex; align-items: flex-start; gap: .06em; white-space: nowrap;
+  font-family: var(--font-sans); font-weight: 800; line-height: 1; letter-spacing: -.02em;
+  font-variant-numeric: lining-nums tabular-nums;
+}
+.price__cur { font-family: "Noto Sans", var(--font-sans); font-weight: 600; font-size: .6em; line-height: 1; margin-top: .12em; letter-spacing: 0; }
+.price--lg { font-size: clamp(2.25rem, 1.8rem + 1.6vw, 3rem); }
+.price--xl { font-size: clamp(3rem, 2.3rem + 2.8vw, 4.25rem); }
+
+.price-block { display: flex; flex-wrap: wrap; align-items: center; gap: .4rem 1rem; margin-bottom: var(--s-4); }
+.price-block .price { color: var(--gold-300); }
+.price-block__label { display: grid; line-height: 1.35; font-size: var(--fs-small); font-weight: 700; color: var(--ivory); }
+.price-block__label small { font-weight: 500; color: rgba(255, 253, 247, .65); font-size: .85em; }
+
+/* Membership fee card */
+.fee-card {
+  position: relative; overflow: hidden; padding: clamp(1.6rem, 1.2rem + 1.6vw, 2.5rem); border-radius: var(--r-xl);
+  background: radial-gradient(120% 100% at 100% 0%, var(--forest-700), var(--forest-900) 60%); color: rgba(255, 253, 247, .82);
+  box-shadow: var(--shadow-md);
+}
+.fee-card::before { content: ""; position: absolute; inset: 0; background: var(--contour) center/700px auto; opacity: .6; pointer-events: none; }
+.fee-card::after { content: ""; position: absolute; left: 0; right: 0; top: 0; height: 4px; background: linear-gradient(90deg, var(--gold-500), var(--gold-300), var(--saffron-500)); }
+.fee-card > * { position: relative; }
+.fee-card__label { display: block; font-size: var(--fs-label); font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--gold-300); }
+.fee-card__amount { margin: .6rem 0 .35rem; color: var(--ivory); }
+.fee-card__words { margin: 0; font-size: .92rem; color: rgba(255, 253, 247, .7); }
+.fee-card hr { border: 0; height: 1px; background: var(--line-light); margin: var(--s-5) 0; }
+.fee-card h2 { color: var(--ivory); font-family: var(--font-sans); font-size: 1.05rem; margin-bottom: .5rem; }
+.fee-card .highlights li { color: rgba(255, 253, 247, .88); }
+.fee-card .btn { width: 100%; margin-top: var(--s-5); }
+.fee-card__foot { display: flex; gap: .5rem; align-items: flex-start; margin: var(--s-4) 0 0; font-size: .85rem; color: rgba(255, 253, 247, .65); }
+.fee-card__foot .icon { color: var(--gold-300); margin-top: .1rem; }
+
+/* Small fee chip (page banners) */
+.fee-chip {
+  display: inline-flex; align-items: center; gap: .6rem; margin-top: var(--s-5); padding: .45rem .5rem .45rem 1rem; border-radius: var(--r-pill);
+  background: rgba(255, 253, 247, .08); border: 1px solid var(--line-light); color: rgba(255, 253, 247, .85); font-size: .92rem; font-weight: 600;
+}
+.fee-chip .price { font-size: 1.15rem; color: var(--forest-950); background: var(--gold-300); padding: .35rem .75rem; border-radius: var(--r-pill); }
 
 /* ---------- Forms ---------- */
 .form { display: grid; gap: var(--s-4); }
@@ -288,3 +328,20 @@ a.contact-card:hover { box-shadow: var(--shadow-md); transform: translateY(-2px)
 }
 .steps strong { display: block; color: var(--ink-900); }
 .steps p { margin: 0; color: var(--ink-500); font-size: .95rem; }
+
+/* Touch devices: no hover "lift" (it sticks after a tap and causes jumpy scrolling) */
+@media (hover: none) {
+  .card--hover:hover, .update:hover, a.contact-card:hover, .hero-card:hover { transform: none; box-shadow: var(--shadow-sm); }
+  .gallery__btn:hover img { transform: none; }
+}
+/* Pressed feedback for touch */
+.btn:active, .filter:active, .lang-switch button:active { transform: scale(.98); }
+
+/* Clickable fact tile (membership fee on home) */
+a.fact--link { display: block; text-decoration: none; background: #fff; border-color: rgba(184, 72, 15, .28); transition: border-color .2s, box-shadow .2s; }
+a.fact--link:hover { border-color: var(--saffron-600); box-shadow: var(--shadow-md); }
+.fact--link .fact__value { color: var(--saffron-600); }
+.fact__more { display: inline-flex; align-items: center; gap: .3rem; margin-top: .6rem; font-size: .85rem; font-weight: 700; color: var(--forest-700); }
+.fact__more .icon { width: 1em; height: 1em; transition: transform .2s var(--ease); }
+a.fact--link:hover .fact__more .icon { transform: translateX(3px); }
+.fee-chip .price__cur { font-size: .78em; margin-top: .06em; }

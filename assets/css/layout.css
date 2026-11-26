@@ -40,6 +40,7 @@
   position: relative; display: block; padding: .55rem .7rem; border-radius: var(--r-sm);
   color: var(--ink-700); font-size: .92rem; font-weight: 600; text-decoration: none; white-space: nowrap;
 }
+.nav__link { transition: color .2s, background-color .2s; }
 .nav__link:hover { color: var(--forest-900); background: var(--olive-100); }
 .nav__link[aria-current="page"] { color: var(--forest-900); }
 .nav__link[aria-current="page"]::after {

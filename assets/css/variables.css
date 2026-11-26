@@ -36,9 +36,9 @@
   --line-light: rgba(255, 253, 247, .16);
 
   /* Typography */
-  --font-sans: "Manrope", "Noto Sans Devanagari", system-ui, -apple-system, "Segoe UI", sans-serif;
-  --font-serif: "Playfair Display", "Noto Serif Devanagari", Georgia, serif;
-  --font-deva: "Noto Sans Devanagari", "Manrope", sans-serif;
+  --font-sans: "Manrope", "Noto Sans Devanagari", "Noto Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-serif: "Playfair Display", "Noto Serif Devanagari", "Noto Sans", Georgia, serif;
+  --font-deva: "Noto Sans Devanagari", "Manrope", "Noto Sans", sans-serif;
 
   --fs-hero: clamp(2.35rem, 1.4rem + 4.2vw, 4.6rem);
   --fs-h1: clamp(2.1rem, 1.5rem + 2.6vw, 3.5rem);
